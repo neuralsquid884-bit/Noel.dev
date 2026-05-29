@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Noel Joseph — Software Engineer & Cyber Security Analyst"/>
+  <meta name="theme-color" content="#0a0a0f"/>
+  <title>Noel Joseph | Software Engineer & Cyber Security Analyst</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash-screen">
+    <div class="splash-content">
+      <div class="progress-ring">
+        <svg viewBox="0 0 120 120">
+          <circle class="progress-ring-bg" cx="60" cy="60" r="54"/>
+          <circle class="progress-ring-fill" cx="60" cy="60" r="54"/>
+        </svg>
+        <span id="splash-percent">0%</span>
+      </div>
+      <div class="splash-logo">Noel<span class="neon">.dev</span></div>
+    </div>
+  </div>
+
+  <!-- Background: Stars & Wiremesh -->
+  <div class="stars-container"></div>
+  <div class="wiremesh-bg" id="wiremeshBg"></div>
+  <div class="bg-glow"></div>
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="logo">Noel<span class="neon">.dev</span></a>
+      
+      <div class="nav-actions">
+        <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="menuBtn" class="icon-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#skills" class="nav-link">Tech Stack</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container hero-content">
+      <div class="badge">
+        <i class="fas fa-shield-alt"></i>
+        <span>Software Engineer & Cyber Security Analyst</span>
+      </div>
+      
+      <h1 class="title">
+        Hi, I'm <span class="gradient-text">Noel Joseph</span>
+      </h1>
+      
+      <div class="typing-wrapper">
+        <span id="typingText"></span><span class="cursor">|</span>
+      </div>
+      
+      <p class="subtitle">
+        I build secure, scalable applications and protect digital infrastructure through proactive security testing, vulnerability assessment, and modern development practices. Based in Kenya 🇪
+      </p>
+      
+      <div class="cta-group">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-code"></i> View My Work
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-paper-plane"></i> Get In Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">About Me</span>
+        <h2 class="heading">Bridging Development & Security</h2>
+        <p class="desc">I combine software engineering expertise with cybersecurity knowledge to deliver solutions that are both functional and secure.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual glass">
+          <div class="profile-container">
+            <img src="profile.jpg" alt="Noel Joseph - Software Engineer" class="profile-img" id="profileImg">
+            <!-- Fallback is now empty so it never covers your face with an icon -->
+            <div class="profile-fallback" id="profileFallback"></div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <div class="info-block">
+            <h3><i class="fas fa-code"></i> Software Engineering</h3>
+            <p>I design and develop robust, scalable applications using modern frameworks and best practices. From web applications to mobile solutions, I ensure clean architecture, optimal performance, and maintainable code.</p>
+          </div>
+
+          <div class="info-block">
+            <h3><i class="fas fa-shield-alt"></i> Cyber Security</h3>
+            <p>I proactively identify and mitigate security vulnerabilities through penetration testing, security audits, and threat modeling. My approach ensures your systems are protected against evolving cyber threats.</p>
+          </div>
+
+          <div class="info-block">
+            <h3><i class="fas fa-lock"></i> What I Offer</h3>
+            <ul class="offer-list">
+              <li><i class="fas fa-check"></i> Secure-by-design application development</li>
+              <li><i class="fas fa-check"></i> Penetration testing & vulnerability assessment</li>
+              <li><i class="fas fa-check"></i> Security architecture review</li>
+              <li><i class="fas fa-check"></i> API security & authentication systems</li>
+              <li><i class="fas fa-check"></i> Cloud security & infrastructure hardening</li>
+            </ul>
+          </div>
+          
+          <div class="stats-grid">
+            <div class="stat-card glass">
+              <div class="stat-num">3+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-num">15+</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-num">8+</div>
+              <div class="stat-label">Security Audits</div>
+            </div>
+            <div class="stat-card glass">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+          </div>        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">What I Do</span>
+        <h2 class="heading">Services & Expertise</h2>
+        <p class="desc">Comprehensive solutions for building and securing your digital infrastructure</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card glass">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Web Application Development</h3>
+          <p>Custom web applications built with modern frameworks featuring responsive design, optimal performance, and scalable architecture.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Full-stack development</li>
+            <li><i class="fas fa-check-circle"></i> RESTful & GraphQL APIs</li>
+            <li><i class="fas fa-check-circle"></i> Database design & optimization</li>
+            <li><i class="fas fa-check-circle"></i> CI/CD implementation</li>
+          </ul>
+        </div>
+
+        <div class="service-card glass">
+          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <h3>Mobile App Development</h3>
+          <p>Cross-platform mobile applications delivering native-like performance with secure data handling and offline capabilities.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> iOS & Android apps</li>
+            <li><i class="fas fa-check-circle"></i> Secure authentication</li>
+            <li><i class="fas fa-check-circle"></i> Offline-first architecture</li>
+            <li><i class="fas fa-check-circle"></i> Push notifications</li>
+          </ul>
+        </div>
+
+        <div class="service-card glass">
+          <div class="service-icon"><i class="fas fa-user-secret"></i></div>
+          <h3>Penetration Testing</h3>
+          <p>Ethical hacking services to identify vulnerabilities before attackers do. Comprehensive security assessments of web apps and networks.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Web app security testing</li>
+            <li><i class="fas fa-check-circle"></i> Network penetration testing</li>
+            <li><i class="fas fa-check-circle"></i> OWASP Top 10 assessment</li>
+            <li><i class="fas fa-check-circle"></i> Detailed remediation reports</li>
+          </ul>
+        </div>
+        <div class="service-card glass">
+          <div class="service-icon"><i class="fas fa-search"></i></div>
+          <h3>Security Auditing</h3>
+          <p>In-depth code reviews and security architecture analysis to identify vulnerabilities, ensure compliance, and implement best practices.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Source code security review</li>
+            <li><i class="fas fa-check-circle"></i> Architecture assessment</li>
+            <li><i class="fas fa-check-circle"></i> Compliance verification</li>
+            <li><i class="fas fa-check-circle"></i> Security policy development</li>
+          </ul>
+        </div>
+
+        <div class="service-card glass">
+          <div class="service-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Security</h3>
+          <p>Secure cloud infrastructure setup and hardening for AWS, Azure, and GCP with zero-trust architecture and identity management.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Cloud infrastructure hardening</li>
+            <li><i class="fas fa-check-circle"></i> IAM & access control</li>
+            <li><i class="fas fa-check-circle"></i> Security monitoring & logging</li>
+            <li><i class="fas fa-check-circle"></i> Disaster recovery planning</li>
+          </ul>
+        </div>
+
+        <div class="service-card glass">
+          <div class="service-icon"><i class="fas fa-shield-virus"></i></div>
+          <h3>Threat Modeling</h3>
+          <p>Proactive security planning through threat identification, risk assessment, and mitigation strategies tailored to your architecture.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Threat identification</li>
+            <li><i class="fas fa-check-circle"></i> Risk assessment</li>
+            <li><i class="fas fa-check-circle"></i> Mitigation strategies</li>
+            <li><i class="fas fa-check-circle"></i> Security documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Tech Stack</span>
+        <h2 class="heading">Technologies & Tools</h2>
+        <p class="desc">Modern technologies I use to build secure, scalable solutions</p>
+      </div>
+
+      <div class="tech-grid">        <div class="tech-category glass">
+          <div class="category-header"><i class="fas fa-code"></i><h3>Development</h3></div>
+          <div class="tech-list">
+            <div class="tech-item"><span class="tech-name">JavaScript/TypeScript</span><div class="tech-bar"><div class="tech-level" data-width="95"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Python</span><div class="tech-bar"><div class="tech-level" data-width="90"></div></div></div>
+            <div class="tech-item"><span class="tech-name">React & Next.js</span><div class="tech-bar"><div class="tech-level" data-width="92"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Node.js</span><div class="tech-bar"><div class="tech-level" data-width="88"></div></div></div>
+            <div class="tech-item"><span class="tech-name">React Native</span><div class="tech-bar"><div class="tech-level" data-width="85"></div></div></div>
+            <div class="tech-item"><span class="tech-name">PostgreSQL/MongoDB</span><div class="tech-bar"><div class="tech-level" data-width="87"></div></div></div>
+          </div>
+        </div>
+
+        <div class="tech-category glass">
+          <div class="category-header"><i class="fas fa-shield-alt"></i><h3>Cyber Security</h3></div>
+          <div class="tech-list">
+            <div class="tech-item"><span class="tech-name">Penetration Testing</span><div class="tech-bar"><div class="tech-level" data-width="90"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Burp Suite</span><div class="tech-bar"><div class="tech-level" data-width="88"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Nmap & Wireshark</span><div class="tech-bar"><div class="tech-level" data-width="85"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Metasploit</span><div class="tech-bar"><div class="tech-level" data-width="82"></div></div></div>
+            <div class="tech-item"><span class="tech-name">OWASP ZAP</span><div class="tech-bar"><div class="tech-level" data-width="90"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Parrot OS/Kali</span><div class="tech-bar"><div class="tech-level" data-width="92"></div></div></div>
+          </div>
+        </div>
+
+        <div class="tech-category glass">
+          <div class="category-header"><i class="fas fa-cloud"></i><h3>Cloud & DevOps</h3></div>
+          <div class="tech-list">
+            <div class="tech-item"><span class="tech-name">AWS</span><div class="tech-bar"><div class="tech-level" data-width="85"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Docker & Kubernetes</span><div class="tech-bar"><div class="tech-level" data-width="83"></div></div></div>
+            <div class="tech-item"><span class="tech-name">CI/CD (GitHub Actions)</span><div class="tech-bar"><div class="tech-level" data-width="87"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Terraform</span><div class="tech-bar"><div class="tech-level" data-width="78"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Linux Administration</span><div class="tech-bar"><div class="tech-level" data-width="90"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Git & Version Control</span><div class="tech-bar"><div class="tech-level" data-width="93"></div></div></div>
+          </div>
+        </div>
+
+        <div class="tech-category glass">
+          <div class="category-header"><i class="fas fa-lock"></i><h3>Security Tools</h3></div>
+          <div class="tech-list">
+            <div class="tech-item"><span class="tech-name">SIEM Solutions</span><div class="tech-bar"><div class="tech-level" data-width="80"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Vulnerability Scanners</span><div class="tech-bar"><div class="tech-level" data-width="88"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Network Analysis</span><div class="tech-bar"><div class="tech-level" data-width="85"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Cryptography</span><div class="tech-bar"><div class="tech-level" data-width="82"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Threat Intelligence</span><div class="tech-bar"><div class="tech-level" data-width="80"></div></div></div>
+            <div class="tech-item"><span class="tech-name">Incident Response</span><div class="tech-bar"><div class="tech-level" data-width="83"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Featured Work</span>
+        <h2 class="heading">Projects & Case Studies</h2>
+        <p class="desc">Real-world solutions showcasing development and security expertise</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- NEW: Emojify -->
+        <div class="project-card glass" data-project="emojify">
+          <div class="project-img"><i class="fas fa-smile-beam"></i></div>
+          <h3 class="project-title">Emojify</h3>
+          <p class="project-desc">A playful yet practical web application that converts plain text into expressive emoji sequences in real-time.</p>
+          <div class="project-tags">
+            <span class="project-tag"><i class="fas fa-code"></i> Frontend</span>
+            <span class="project-tag"><i class="fas fa-magic"></i> Creative Tool</span>
+          </div>
+          <div class="tech-stack"><span>JavaScript</span><span>Regex</span><span>Web APIs</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+            <button class="link-btn modal-btn"><i class="fas fa-eye"></i> Case Study</button>
+          </div>
+        </div>
+
+        <!-- NEW: SoundScape -->
+        <div class="project-card glass" data-project="soundscape">
+          <div class="project-img"><i class="fas fa-wave-square"></i></div>
+          <h3 class="project-title">SoundScape</h3>
+          <p class="project-desc">A dynamic web application that transforms audio input into mesmerizing, real-time visual patterns and waveforms.</p>
+          <div class="project-tags">
+            <span class="project-tag"><i class="fas fa-music"></i> Audio</span>
+            <span class="project-tag"><i class="fas fa-palette"></i> Visualization</span>
+          </div>
+          <div class="tech-stack"><span>JavaScript</span><span>Web Audio API</span><span>Canvas API</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+            <button class="link-btn modal-btn"><i class="fas fa-eye"></i> Case Study</button>
+          </div>
+        </div>
+
+        <!-- Existing Projects -->
+        <div class="project-card glass" data-project="nutrition-ai">
+          <div class="project-img"><i class="fas fa-robot"></i></div>
+          <h3 class="project-title">Nutrition Assistant AI</h3>
+          <p class="project-desc">Privacy-focused nutrition tracking app with ML-powered meal analysis, end-to-end encryption, and local-first data storage.</p>
+          <div class="project-tags">
+            <span class="project-tag"><i class="fas fa-code"></i> Development</span>            <span class="project-tag"><i class="fas fa-lock"></i> Security</span>
+          </div>
+          <div class="tech-stack"><span>React Native</span><span>Python</span><span>TensorFlow Lite</span><span>SQLite</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+            <button class="link-btn modal-btn"><i class="fas fa-eye"></i> Case Study</button>
+          </div>
+        </div>
+
+        <div class="project-card glass" data-project="skillswap">
+          <div class="project-img"><i class="fas fa-exchange-alt"></i></div>
+          <h3 class="project-title">SkillSwap Platform</h3>
+          <p class="project-desc">Decentralized skill-exchange marketplace with smart contract escrow, identity verification, and secure messaging.</p>
+          <div class="project-tags">
+            <span class="project-tag"><i class="fas fa-code"></i> Development</span>
+            <span class="project-tag"><i class="fas fa-shield-alt"></i> Blockchain Security</span>
+          </div>
+          <div class="tech-stack"><span>Next.js</span><span>Solidity</span><span>Web3.js</span><span>IPFS</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+            <button class="link-btn modal-btn"><i class="fas fa-eye"></i> Case Study</button>
+          </div>
+        </div>
+
+        <div class="project-card glass" data-project="streamgen">
+          <div class="project-img"><i class="fas fa-bolt"></i></div>
+          <h3 class="project-title">StreamGen Security Toolkit</h3>
+          <p class="projhttps://github.com/neuralsquid884-bitect-desc">Open-source security toolkit for auditing CDN setups and detecting misconfigurations in real-time media pipelines.</p>
+          <div class="project-tags">
+            <span class="project-tag"><i class="fas fa-user-secret"></i> Security Tool</span>
+            <span class="project-tag"><i class="fas fa-search"></i> Vulnerability Scanner</span>
+          </div>
+          <div class="tech-stack"><span>Python</span><span>Go</span><span>Docker</span><span>OWASP ZAP</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>
+            <button class="link-btn modal-btn"><i class="fas fa-eye"></i> Case Study</button>
+          </div>
+        </div>
+
+        <div class="project-card glass" data-project="secureapi">
+          <div class="project-img"><i class="fas fa-key"></i></div>
+          <h3 class="project-title">SecureAPI Gateway</h3>
+          <p class="project-desc">Enterprise-grade API gateway with rate limiting, JWT authentication, request validation, and comprehensive audit logging.</p>
+          <div class="project-tags">
+            <span class="project-tag"><i class="fas fa-code"></i> Backend</span>
+            <span class="project-tag"><i class="fas fa-lock"></i> API Security</span>
+          </div>
+          <div class="tech-stack"><span>Node.js</span><span>Express</span><span>Redis</span><span>JWT</span></div>
+          <div class="project-actions">
+            <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" class="link-btn"><i class="fab fa-github"></i> GitHub</a>            <button class="link-btn modal-btn"><i class="fas fa-eye"></i> Case Study</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-btn">
+        <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <i class="fab fa-github"></i> Explore More on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Get In Touch</span>
+        <h2 class="heading">Let's Work Together</h2>
+        <p class="desc">Have a project in mind or need a security audit? Let's discuss how I can help.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:adudanoel42@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Noel,%20I'm%20interested%20in%20working%20with%20you.">adudanoel42@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/254118562257" target="_blank" rel="noopener noreferrer">+254 118 562 257</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Nairobi, Kenya 🇰</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-share-alt"></i></div>            <div>
+              <h4>Connect</h4>
+              <div class="socials">
+                <a href="https://github.com/neuralsquid884-bit" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-hire-me glass">
+            <h3><i class="fas fa-award"></i> Why Hire Me?</h3>
+            <ul>
+              <li><i class="fas fa-check"></i> Dual expertise in development & security</li>
+              <li><i class="fas fa-check"></i> Security-first approach from day one</li>
+              <li><i class="fas fa-check"></i> Clear communication & documentation</li>
+              <li><i class="fas fa-check"></i> Timely delivery & ongoing support</li>
+            </ul>
+          </div>
+        </div>
+
+        <form class="glass contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" id="contactForm">
+          <input type="hidden" name="_subject" value="New Portfolio Inquiry from Noel.dev">
+          <input type="text" name="_gotcha" style="display:none">
+          
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" class="input" required placeholder="John Doe"/>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" class="input" required placeholder="john@example.com"/>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" class="input">
+              <option value="">Select a service...</option>
+              <option value="web-dev">Web Application Development</option>
+              <option value="mobile-dev">Mobile App Development</option>
+              <option value="pentest">Penetration Testing</option>
+              <option value="security-audit">Security Audit</option>
+              <option value="cloud-security">Cloud Security</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Project Details</label>            <textarea id="message" name="message" class="input textarea" required placeholder="Tell me about your project or security needs..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          
+          <div id="formMsg" class="form-msg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">Noel<span class="neon">.dev</span></div>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Tech Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" download>Resume</a>
+      </div>
+      <p class="copyright">
+        &copy; <span id="year"></span> Noel Joseph. All rights reserved.
+        <br/><small>Built with <i class="fas fa-heart" style="color:var(--neon-pink)"></i> & secure coding practices</small>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="projectModal" class="modal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box glass">
+      <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+      
+      <div class="modal-header">
+        <span class="modal-tag" id="mTag"></span>
+        <h3 id="mTitle"></h3>
+      </div>
+      
+      <div class="modal-body">
+        <div class="modal-visual" id="mImage"></div>
+        <div class="modal-content-side">
+          <p id="mDesc" class="m-desc"></p>
+          
+          <div class="m-section">            <h4><i class="fas fa-lightbulb"></i> Challenge</h4>
+            <p id="mChallenge"></p>
+          </div>
+          
+          <div class="m-section">
+            <h4><i class="fas fa-cogs"></i> Solution</h4>
+            <p id="mSolution"></p>
+          </div>
+          
+          <div class="m-section">
+            <h4><i class="fas fa-code"></i> Tech Stack</h4>
+            <div class="tech-stack" id="mTech"></div>
+          </div>
+          
+          <div class="m-section">
+            <h4><i class="fas fa-chart-line"></i> Results</h4>
+            <ul id="mResults" class="m-list"></ul>
+          </div>
+          
+          <div class="m-actions">
+            <a href="#" id="mLive" class="btn btn-primary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#" id="mCode" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Source Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
